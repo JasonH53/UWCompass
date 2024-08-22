@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './home.css';
 
+// Hard coded for now
 const programs = [
   'BCS, Computer Science',
   'BCS, Data Science',
@@ -37,7 +38,21 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigateToProgram(search);
+    if (suggestions.length > 0) {
+      const selectedProgram = suggestions[0];
+      setSearch(selectedProgram);
+
+      const highlightElement = document.querySelector('.suggestions-list li');
+      if (highlightElement) {
+        highlightElement.classList.add('selected-highlight');
+        setTimeout(() => {
+          highlightElement.classList.remove('selected-highlight');
+          navigateToProgram(selectedProgram);
+        }, 200);
+      }
+    } else {
+      navigateToProgram(search);
+    }
   };
 
   const navigateToProgram = (program) => {
