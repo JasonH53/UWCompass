@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import './home.css';
 
 const programs = [
-  'Computer Science',
-  'Financial Analysis and Risk Management',
-  'Actuarial science',
-  'Statistics',
-  'Mathematical Finance',
-  'Mathematical Studies',
+  'BCS, Computer Science',
+  'BMath, Computer Science',
+  'BMath, Financial Analysis and Risk Management',
+  'BMath, Actuarial science',
+  'BMath, Statistics',
+  'BMath, Mathematical Finance',
+  'BMath, Mathematical Studies',
 ];
 
 const Home = () => {
@@ -34,8 +35,12 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (programs.includes(search)) {
-      navigate(`/program/${encodeURIComponent(search)}`);
+    navigateToProgram(search);
+  };
+
+  const navigateToProgram = (program) => {
+    if (programs.includes(program)) {
+      navigate(`/program/${encodeURIComponent(program)}`);
     } else {
       setError('Invalid course. Please select a valid program.');
     }
@@ -45,6 +50,7 @@ const Home = () => {
     setSearch(program);
     setSuggestions([]);
     setError('');
+    navigateToProgram(program);
   };
 
   return (

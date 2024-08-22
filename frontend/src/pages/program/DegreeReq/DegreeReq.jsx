@@ -1,16 +1,10 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-// import './DegreeRequirements.css';
 
-const DegreeRequirements = () => {
-  const location = useLocation();
-  const { passedCourses, programName } = location.state || { passedCourses: [], programName: '' };
-
-  // This is a placeholder. You would replace this with actual degree requirements logic
+const DegreeReq = ({ programName, passedCourses }) => {
   const checkRequirements = () => {
-    // Example logic
+    const totalCredits = passedCourses.reduce((sum, course) => sum + Number(course.earned), 0);
     return {
-      totalCredits: passedCourses.length * 0.5, // Assuming each course is 3 credits
+      totalCredits: totalCredits,
       requiredCredits: 20,
       coreCoursesMet: false,
       electivesMet: false,
@@ -21,15 +15,15 @@ const DegreeRequirements = () => {
 
   return (
     <div className="degree-requirements">
-      <h1>{programName} Degree Requirements</h1>
+      <h2>Degree Requirements</h2>
       <div className="requirements-summary">
-        <h2>Summary</h2>
+        <h3>Summary</h3>
         <p>Total Credits: {requirements.totalCredits} / {requirements.requiredCredits}</p>
         <p>Core Courses: {requirements.coreCoursesMet ? 'Met' : 'Not Met'}</p>
         <p>Electives: {requirements.electivesMet ? 'Met' : 'Not Met'}</p>
       </div>
       <div className="courses-list">
-        <h2>Passed Courses</h2>
+        <h3>Passed Courses</h3>
         <ul>
           {passedCourses.map((course, index) => (
             <li key={index}>{course.code}: {course.description}</li>
@@ -40,4 +34,4 @@ const DegreeRequirements = () => {
   );
 };
 
-export default DegreeRequirements;
+export default DegreeReq;

@@ -3,11 +3,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   padding: 2rem;
   font-family: Arial, sans-serif;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow: hidden;
+  height: 100%;
 }
 
 h1 {
@@ -26,8 +32,8 @@ h1 {
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .search-container {
@@ -41,8 +47,13 @@ h1 {
   font-size: 1rem;
   border: 2px solid #003366;
   border-right: none;
-  border-radius: 4px 0 0 4px;
+  border-radius: 8px 0 0 8px;
   outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px rgba(0, 51, 102, 0.2);
 }
 
 .search-button {
@@ -51,39 +62,50 @@ h1 {
   background-color: #003366;
   color: white;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 8px 8px 0;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .search-button:hover {
   background-color: #004080;
+  transform: translateY(-2px);
 }
 
 .suggestions-list {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 5px);
   left: 0;
   right: 0;
   list-style-type: none;
   padding: 0;
   margin: 0;
   background-color: white;
-  border: 1px solid #ccc;
-  border-top: none;
-  border-radius: 0 0 4px 4px;
-  max-height: 200px;
+  border-radius: 8px;
+  max-height: 250px;
   overflow-y: auto;
   z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .suggestions-list li {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .suggestions-list li:hover {
-  background-color: #f0f2f5;
+  background-color: rgba(0, 51, 102, 0.1);
+  padding-left: 1.25rem;
+}
+
+.suggestions-list li:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.suggestions-list li:last-child {
+  border-radius: 0 0 8px 8px;
 }
 
 @media (max-width: 768px) {
@@ -97,10 +119,10 @@ h1 {
 
   .search-input {
     border-right: 2px solid #003366;
-    border-radius: 4px 4px 0 0;
+    border-radius: 8px 8px 0 0;
   }
 
   .search-button {
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 8px 8px;
   }
 }
