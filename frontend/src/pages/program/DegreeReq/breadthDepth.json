@@ -1,0 +1,14 @@
+{
+  "humanities": [
+    "CHINA", "CLAS", "CMW", "COMMST", "CROAT", "DAC", "DUTCH", "EASIA", 
+    "ENGL", "FINE", "FR", "GER", "GRK", "HIST", "HUMSC", "ITAL", "ITALST", 
+    "JAPAN", "JS", "KOREA", "LAT", "MEDVL", "MUSIC", "PHIL", "PORT", "REES", 
+    "RS", "RUSS", "SI", "SPAN", "THPERF", "VCULT"
+  ],
+  "pureSciences": ["BIOL", "CHEM", "EARTH", "PHYS", "SCI"],
+  "socialSciences": [
+    "AFM", "ANTH", "APPLS", "ARBUS", "BET", "BUS", "COMM", "ECON", "ENBUS", 
+    "GEOG", "GSJ", "HRM", "INDEV", "INDG", "INTST", "LS", "MSCI", "PACS", 
+    "PSCI", "PSYCH", "REC", "SDS", "SMF", "SOC", "SOCWK", "STV"
+  ]
+}

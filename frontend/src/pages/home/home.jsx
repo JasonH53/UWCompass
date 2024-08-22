@@ -10,6 +10,7 @@ const programs = [
   'BMath, Statistics',
   'BMath, Mathematical Finance',
   'BMath, Mathematical Studies',
+  'BMath, General'
 ];
 
 const Home = () => {

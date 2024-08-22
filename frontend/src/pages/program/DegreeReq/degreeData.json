@@ -1,0 +1,130 @@
+{
+  "BCS, Computer Science": {
+    "requiredCredits": 20,
+    "coreCourses": [
+      ["CS115", "CS135", "CS145"],
+      ["CS136", "CS146"],
+      "CS136L",
+      ["CS245", "CS245E"],
+      ["CS246", "CS246E"],
+      ["CS240", "CS240E"],
+      ["CS241", "CS241E"],
+      ["CS251", "CS251E"],
+      "CS341",
+      "CS350",
+      ["MATH127", "MATH137", "MATH147"],
+      ["MATH128", "MATH138", "MATH148"],
+      ["MATH135", "MATH145"],
+      ["MATH136", "MATH146"],
+      ["MATH239", "MATH249"],
+      ["STAT230", "STAT240"],
+      ["STAT231", "STAT241"]
+    ],
+    "additionalRequirements": [
+      {
+        "name": "CS 340-398",
+        "courses": ["CS340", "CS341", "CS342", "CS343", "CS344", "CS345", "CS346", "CS347", "CS348", "CS349", "CS350", "CS351", "CS352", "CS353", "CS354", "CS355", "CS356", "CS357", "CS358", "CS359", "CS360", "CS361", "CS362", "CS363", "CS364", "CS365", "CS366", "CS367", "CS368", "CS369", "CS370", "CS371", "CS372", "CS373", "CS374", "CS375", "CS376", "CS377", "CS378", "CS379", "CS380", "CS381", "CS382", "CS383", "CS384", "CS385", "CS386", "CS387", "CS388", "CS389", "CS390", "CS391", "CS392", "CS393", "CS394", "CS395", "CS396", "CS397", "CS398"],
+        "count": 3
+      },
+      {
+        "name": "CS 440-489",
+        "courses": ["CS440", "CS441", "CS442", "CS443", "CS444", "CS445", "CS446", "CS447", "CS448", "CS449", "CS450", "CS451", "CS452", "CS453", "CS454", "CS455", "CS456", "CS457", "CS458", "CS459", "CS460", "CS461", "CS462", "CS463", "CS464", "CS465", "CS466", "CS467", "CS468", "CS469", "CS470", "CS471", "CS472", "CS473", "CS474", "CS475", "CS476", "CS477", "CS478", "CS479", "CS480", "CS481", "CS482", "CS483", "CS484", "CS485", "CS486", "CS487", "CS488", "CS489"],
+        "count": 2
+      },
+      {
+        "name": "Additional CS Courses",
+        "courses": ["CS440", "CS441", "CS442", "CS443", "CS444", "CS445", "CS446", "CS447", "CS448", "CS449", "CS450", "CS451", "CS452", "CS453", "CS454", "CS455", "CS456", "CS457", "CS458", "CS459", "CS460", "CS461", "CS462", "CS463", "CS464", "CS465", "CS466", "CS467", "CS468", "CS469", "CS470", "CS471", "CS472", "CS473", "CS474", "CS475", "CS476", "CS477", "CS478", "CS479", "CS480", "CS481", "CS482", "CS483", "CS484", "CS485", "CS486", "CS487", "CS488", "CS489", "CS490", "CS491", "CS492", "CS493", "CS494", "CS495", "CS496", "CS497", "CS498", "CO487", "CS499T", "STAT440"],
+        "count": 1
+      }
+    ],
+    "breadthAndDepth": {
+      "humanities": 2,
+      "pureSciences": 1,
+      "socialSciences": 2
+    },
+    "minimumAverages": {
+      "csMajor": 70,
+      "mathMajor": 65
+    }
+  },
+  "BMath": {
+    "requiredCredits": 20,
+    "coreCourses": [
+      ["CS115", "CS135", "CS145"],
+      ["CS116", "CS136", "CS146"],
+      ["MATH106", "MATH136", "MATH146"],
+      ["MATH127", "MATH137", "MATH147"],
+      ["MATH128", "MATH138", "MATH148"],
+      ["MATH135", "MATH145"],
+      ["MATH235", "MATH245"],
+      ["MATH237", "MATH239", "MATH247", "MATH249"],
+      ["STAT230", "STAT240"],
+      ["STAT231", "STAT241"]
+    ],
+    "communicationRequirement": {
+      "list1": ["COMMST100", "COMMST223", "EMLS101R", "EMLS102R", "EMLS129R", "ENGL109", "ENGL129R"],
+      "list2": {
+        "option1": "Complete 1 additional course from List 1",
+        "option2": ["COMMST225", "COMMST227", "COMMST228", "EMLS103R", "EMLS104R", "EMLS110R", "ENGL101B", "ENGL108B", "ENGL108D", "ENGL119", "ENGL208B", "ENGL209", "ENGL210E", "ENGL210F", "ENGL378", "MTHEL300"]
+      }
+    },
+    "additionalConstraints": "Students majoring in Computer Science normally start in CS135. Students with strong aptitude may take CS145 followed by CS146. Students starting with CS115 who wish access to CS courses (for students majoring in Computer Science) must take CS136 after CS116."
+  },
+  "BMath, Statistics": {
+    "extends": "BMath",
+    "requiredCredits": 20,
+    "coreCourses": [
+      "STAT330",
+      "STAT331",
+      "STAT332",
+      "STAT333",
+      ["ENGL378", "MTHEL300"],
+      ["MATH237", "MATH247"],
+      ["AMATH231", "AMATH242", "AMATH250", "AMATH251", "AMATH350", "CS371", "MATH239", "MATH249"]
+    ],
+    "additionalRequirements": [
+      {
+        "name": "STAT 400-level",
+        "courses": ["STAT4XX"],
+        "count": 2
+      },
+      {
+        "name": "STAT 300- or 400-level",
+        "courses": ["STAT3XX", "STAT4XX"],
+        "count": 1
+      },
+      {
+        "name": "Additional STAT or CS requirement",
+        "options": [
+          {
+            "name": "Additional STAT 400-level",
+            "courses": ["STAT4XX"],
+            "count": 1
+          },
+          {
+            "name": "Specific CS courses",
+            "courses": ["CS457", "CS485", "CS486"],
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "300- or 400-level from specified departments",
+        "courses": ["ACTSC3XX", "ACTSC4XX", "AMATH3XX", "AMATH4XX", "CO3XX", "CO4XX", "CS3XX", "CS4XX", "MATBUS3XX", "MATBUS4XX", "MATH3XX", "MATH4XX", "PMATH3XX", "PMATH4XX", "STAT3XX", "STAT4XX"],
+        "count": 4
+      },
+      {
+        "name": "Additional courses from specified departments",
+        "courses": ["ACTSC", "AMATH", "CO", "CS", "MATBUS", "MATH", "PMATH", "STAT"],
+        "count": 3
+      }
+    ]
+  },
+  "BCS, Data Science": {
+    "extends": "BCS, Computer Science",
+    "additionalRequirements": {
+      "coreCourses": ["CS330", "CS348", "CS480", "STAT341"],
+      "additionalCourses": ["CS451", "CS480", "CS485"]
+    }
+  }
+}

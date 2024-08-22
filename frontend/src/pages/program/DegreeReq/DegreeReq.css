@@ -1,0 +1,86 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.degree-requirements {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+h2 {
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
+  margin-top: 0;
+  padding-top: 10px;
+  z-index: 1;
+}
+
+h3 {
+  color: #005a9c;
+  margin-top: 20px;
+}
+
+.requirements-summary, .core-courses, .additional-cs-courses, .breadth-and-depth, .courses-list {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.met {
+  color: green;
+  font-weight: bold;
+}
+
+.not-met {
+  color: red;
+  font-weight: bold;
+}
+
+.courses-list ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+.courses-list li {
+  margin-bottom: 10px;
+  break-inside: avoid-column;
+}
+
+@media (max-width: 600px) {
+  .degree-requirements {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .courses-list ul {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}
