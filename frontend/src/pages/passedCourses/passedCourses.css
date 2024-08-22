@@ -1,0 +1,79 @@
+.passed-courses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  position: relative;
+  z-index: 1;
+}
+
+.passed-courses h1 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.passed-courses p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.passed-courses ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.passed-courses li {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.passed-courses li strong {
+  color: #B65FCF;
+}
+
+.action-button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 1rem;
+}
+
+.action-button:hover {
+  background-color: #004080;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-button {
+  background-color: #03C04A;
+}
+
+.confirm-button:hover {
+  background-color: green;
+}
