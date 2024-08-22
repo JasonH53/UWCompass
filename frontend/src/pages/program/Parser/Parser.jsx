@@ -71,6 +71,7 @@ const Parser = ({ onParseComplete }) => {
         rows="10"
         cols="50"
       />
+      <p>Your transcript data is processed locally, none of your data is saved.</p>
     </div>
   );
 };

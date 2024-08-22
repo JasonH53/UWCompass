@@ -16,6 +16,7 @@ const PassedCourses = ({ programName, passedCourses, onConfirm, onReturn }) => {
       ) : (
         <p>No passed courses found.</p>
       )}
+      <p>Note: Transfer credits do not work at this moment</p>
       <button onClick={onReturn} className="action-button">
         Return to Transcript Parser
       </button>
