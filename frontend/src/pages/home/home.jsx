@@ -78,6 +78,9 @@ const Home = () => {
           </ul>
         )}
       </form>
+      <footer className="footer">
+        UWCompass 2024. All rights reserved. Built by <a href="https://jasonhon.com" target="_blank" rel="noopener noreferrer">Jason</a>
+      </footer>
     </div>
   );
 };
