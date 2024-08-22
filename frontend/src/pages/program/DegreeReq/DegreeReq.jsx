@@ -45,7 +45,7 @@ const DegreeReq = ({ programName, passedCourses }) => {
     return (
       <div className="degree-requirements error">
         <h2>Error: Program Not Found</h2>
-        <p>The program "{programName}" is not found in the degree database or not implemented yet. Please check the program name and try again. (I only added BCS, CS, and BCS DS, and Stats</p>
+        <p>The program "{programName}" is not found in the degree database. Please check the program name and try again. Programs that are available now: BCS CS/DS, BMath CS, BMath Stats</p>
       </div>
     );
   }
@@ -118,15 +118,21 @@ const DegreeReq = ({ programName, passedCourses }) => {
         return {
           name: req.name,
           met: req.options.some(option => 
-            passedCourses.filter(course => option.courses.includes(course.code)).length >= option.count
+            passedCourses.filter(course => 
+              option.courses.some(prefix => normalizeCourseCode(course.code).startsWith(prefix))
+            ).length >= option.count
           ),
           details: req.options.map(option => {
-            const metCount = passedCourses.filter(course => option.courses.includes(course.code)).length;
+            const metCount = passedCourses.filter(course => 
+              option.courses.some(prefix => normalizeCourseCode(course.code).startsWith(prefix))
+            ).length;
             return `${option.name}: ${metCount}/${option.count}`;
           }).join(', ')
         };
       } else if (req.courses && req.count) {
-        const metCount = passedCourses.filter(course => req.courses.includes(course.code)).length;
+        const metCount = passedCourses.filter(course => 
+          req.courses.some(prefix => normalizeCourseCode(course.code).startsWith(prefix))
+        ).length;
         return {
           name: req.name,
           met: metCount >= req.count,
@@ -166,12 +172,12 @@ const DegreeReq = ({ programName, passedCourses }) => {
     if (!programRequirements.communicationRequirement) return null;
 
     const list1Course = passedCourses.some(course => 
-      programRequirements.communicationRequirement.list1.includes(course.code)
+      programRequirements.communicationRequirement.list1.includes(normalizeCourseCode(course.code))
     );
 
     const list2Course = passedCourses.some(course => 
-      programRequirements.communicationRequirement.list2.option2.includes(course.code)
-    ) || (list1Course && programRequirements.communicationRequirement.list2.option1 === "Complete 1 additional course from List 1");
+      programRequirements.communicationRequirement.list2.includes(normalizeCourseCode(course.code))
+    );
 
     return {
       list1: list1Course,

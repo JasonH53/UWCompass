@@ -4,6 +4,7 @@ import './home.css';
 
 const programs = [
   'BCS, Computer Science',
+  'BCS, Data Science',
   'BMath, Computer Science',
   'BMath, Financial Analysis and Risk Management',
   'BMath, Actuarial science',

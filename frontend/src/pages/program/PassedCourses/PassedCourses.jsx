@@ -21,7 +21,7 @@ const PassedCourses = ({ programName, passedCourses, onConfirm, onReturn }) => {
         Return to Transcript Parser
       </button>
       <button onClick={onConfirm} className="action-button confirm-button">
-        Confirm Passed Courses
+        Confirm Courses
       </button>
     </div>
   );
