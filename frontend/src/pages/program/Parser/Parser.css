@@ -10,10 +10,7 @@
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
-  position: relative;
-  z-index: 1;
   transition: all 0.3s ease;
-  box-sizing: border-box;
 }
 
 .transcript-parser:hover {
@@ -21,14 +18,11 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.transcript-parser h1 {
-  font-size: 2.5rem;
+.transcript-parser h2 {
+  font-size: 2rem;
   color: #003366;
   margin-bottom: 1.5rem;
   text-align: center;
-  z-index: 1;
-  font-weight: 700;
-  width: 100%;
 }
 
 .transcript-parser p {
@@ -38,31 +32,16 @@
   width: 100%;
 }
 
-.transcript-parser form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.transcript-parser input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
 
-.transcript-parser textarea {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  outline: none;
-  resize: vertical;
-  margin-bottom: 1.5rem;
-  transition: border-color 0.3s ease;
-  box-sizing: border-box;
-}
-
-.transcript-parser textarea:focus {
-  border-color: #003366;
-}
-
-.transcript-parser button {
+.transcript-parser label {
   padding: 1rem 2rem;
   font-size: 1rem;
   background-color: #003366;
@@ -74,15 +53,17 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
-.transcript-parser button:hover {
+.transcript-parser label:hover {
   background-color: #004080;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.transcript-parser button:active {
+.transcript-parser label:active {
   transform: translateY(0);
 }
 
@@ -92,15 +73,11 @@
     margin: 1rem auto;
   }
 
-  .transcript-parser h1 {
-    font-size: 2rem;
+  .transcript-parser h2 {
+    font-size: 1.5rem;
   }
 
-  .transcript-parser textarea {
-    font-size: 0.9rem;
-  }
-
-  .transcript-parser button {
+  .transcript-parser label {
     padding: 0.8rem 1.6rem;
     font-size: 0.9rem;
   }

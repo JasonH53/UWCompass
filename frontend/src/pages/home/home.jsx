@@ -12,6 +12,17 @@ const programs = [
   'BMath, Statistics',
   'BMath, Mathematical Finance',
   'BMath, Mathematical Studies',
+  'BMath, Applied Mathematics',
+  'BMath, Computational Mathematics',
+  'BMath, Data Science',
+  'BMath, Information Technology Management',
+  'BMath, Mathematical Economics',
+  'BMath, Mathematical Physics',
+  'BMath, Business Administration',
+  'BMath, Chartered Professional Accountancy',
+  'BMath, Teaching',
+  'BMath, Pure Mathematics',
+  'BMath, Combinatorics and Optimization',
   'BMath, General'
 ];
 
