@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/UWCompass/static/css/main.d0a396ba.css",
-    "main.js": "/UWCompass/static/js/main.55903055.js",
+    "main.js": "/UWCompass/static/js/main.39d63b3b.js",
     "index.html": "/UWCompass/index.html",
     "main.d0a396ba.css.map": "/UWCompass/static/css/main.d0a396ba.css.map",
-    "main.55903055.js.map": "/UWCompass/static/js/main.55903055.js.map"
+    "main.39d63b3b.js.map": "/UWCompass/static/js/main.39d63b3b.js.map"
   },
   "entrypoints": [
     "static/css/main.d0a396ba.css",
-    "static/js/main.55903055.js"
+    "static/js/main.39d63b3b.js"
   ]
 }
