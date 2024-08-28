@@ -168,7 +168,11 @@
         "courses": ["ACTSC", "AMATH", "CO", "CS", "MATBUS", "MATH", "PMATH", "STAT"],
         "count": 3
       }
-    ]
+    ],
+    "minimumAverages": {
+      "overall": 60,
+      "mathMajor": 65
+    },
   },
   "BCS, Data Science": {
     "extends": "BCS, Computer Science",
@@ -289,7 +293,7 @@
       ["AMATH353", "CO372", "CS476", "PMATH453"],
       ["ECON101", "ECON120W"],
       ["ECON102", "ECON140W"],
-      ["ECON201", "ECON260W"],
+      ["ECON201", "ECON260W"]
     ],
     "additionalRequirements": [
       {
