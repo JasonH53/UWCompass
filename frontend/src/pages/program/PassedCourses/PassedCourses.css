@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 .passed-courses {
   display: flex;
   flex-direction: column;
@@ -14,7 +19,7 @@
   z-index: 1;
 }
 
-.passed-courses h1 {
+.passed-courses h2 {
   font-size: 2.5rem;
   color: #003366;
   margin-bottom: 1.5rem;
@@ -36,6 +41,7 @@
   margin-bottom: 1.5rem;
   max-height: 400px;
   overflow-y: auto;
+  width: 100%;
 }
 
 .passed-courses li {
@@ -61,7 +67,6 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-top: 1rem;
 }
 
 .action-button:hover {
@@ -71,9 +76,115 @@
 }
 
 .confirm-button {
+  margin-top: 1rem;
   background-color: #03C04A;
 }
 
 .confirm-button:hover {
-  background-color: green;
+  background-color: #02913A;
+}
+
+.add-course-button {
+  margin-bottom: 1rem;
+}
+
+.add-course-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.add-course-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-course-form h3 {
+  color: #003366;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.add-course-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-buttons button {
+  flex: 1;
+  max-width: 150px;
+  margin: 0 0.5rem;
+}
+
+.cancel-button {
+  background-color: #666;
+}
+
+.cancel-button:hover {
+  background-color: #888;
+}
+
+.popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #03C04A;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1010;
+  animation: fadeInOut 3s ease-in-out;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .passed-courses {
+    padding: 1.5rem;
+  }
+
+  .passed-courses h2 {
+    font-size: 2rem;
+  }
+
+  .action-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .add-course-form {
+    padding: 1.5rem;
+  }
 }

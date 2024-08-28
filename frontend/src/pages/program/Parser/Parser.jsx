@@ -23,7 +23,7 @@ const Parser = ({ onParseComplete }) => {
 
     while ((match = courseRegex.exec(cleanedText)) !== null) {
       const [, courseCode, description, attempted, earned, grade] = match;
-      
+
       if (attempted === earned && parseFloat(attempted) !== 0) {
         const course = {
           code: courseCode,
