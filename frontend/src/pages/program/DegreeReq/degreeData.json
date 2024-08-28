@@ -279,71 +279,31 @@
       "STAT330",
       "STAT331",
       "STAT333",
-      "STAT443"
+      "STAT443",
+      ["AFM101", "BUS127W"],
+      ["AFM102", "BUS247W"],
+      ["AFM131", "ARBUS101", "BUS111W"],
+      ["AMATH242", "CS335", "CS371"],
+      ["AMATH250", "AMATH251", "AMATH350"],
+      ["AMATH351", "CO250", "CO255", "PMATH352"],
+      ["AMATH353", "CO372", "CS476", "PMATH453"],
+      ["ECON101", "ECON120W"],
+      ["ECON102", "ECON140W"],
+      ["ECON201", "ECON260W"],
     ],
     "additionalRequirements": [
       {
-        "name": "AFM requirement 1",
-        "courses": ["AFM101", "BUS127W"],
-        "count": 1
-      },
-      {
-        "name": "AFM requirement 2",
-        "courses": ["AFM102", "BUS247W"],
-        "count": 1
-      },
-      {
-        "name": "AFM requirement 3",
-        "courses": ["AFM131", "ARBUS101", "BUS111W"],
-        "count": 1
-      },
-      {
-        "name": "Complete 1 of the following",
-        "courses": ["AMATH242", "CS335", "CS371"],
-        "count": 1
-      },
-      {
-        "name": "Complete 1 of the following",
-        "courses": ["AMATH250", "AMATH251", "AMATH350"],
-        "count": 1
-      },
-      {
-        "name": "Complete 1 of the following",
-        "courses": ["AMATH351", "CO250", "CO255", "PMATH352"],
-        "count": 1
-      },
-      {
-        "name": "Complete 1 of the following",
-        "courses": ["AMATH353", "CO372", "CS476", "PMATH453"],
-        "count": 1
-      },
-      {
-        "name": "ECON requirement 1",
-        "courses": ["ECON101", "ECON120W"],
-        "count": 1
-      },
-      {
-        "name": "ECON requirement 2",
-        "courses": ["ECON102", "ECON140W"],
-        "count": 1
-      },
-      {
-        "name": "ECON requirement 3",
-        "courses": ["ECON201", "ECON260W"],
-        "count": 1
-      },
-      {
-        "name": "Complete 1 of the following",
+        "name": "MATH237 and PMATH333, or MATH247",
         "options": {
-          {
-            "name": "MATH247",
-            "courses": ["MATH247"],
-            "count": 1
-          },
           {
             "name": "MATH237 and PMATH333",
             "courses": ["MATH237", "PMATH333"],
             "count": 2
+          },
+          {
+            "name": "MATH247",
+            "courses": ["MATH247"],
+            "count": 1
           }
         }
       }
