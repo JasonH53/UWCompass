@@ -256,6 +256,7 @@
       {
         "name": "Additional courses from specified departments",
         "courses": ["ACTSC", "AMATH", "CO", "CS", "MATBUS", "MATH", "PMATH", "STAT"]
+        "count": 1
       },
       {
         "name": "Additional ACTSC 300- or 400- level",
@@ -315,6 +316,36 @@
     "minimumAverages": {
       "overall": 60,
       "mathMajor": 70
+    }
+  },
+  "BMath, Pure Mathematics": {
+    "extends": "BMath",
+    "requiredCredits": 20,
+    "coreCourses": [
+      ["MATH237", "MATH247"],
+      ["MATH239", "MATH249"],
+      "PMATH347",
+      "PMATH348",
+      "PMATH351",
+      "PMATH352",
+      "PMATH450",
+      ["PMATH365", "PMATH367"]
+    ],
+    "additionalRequirements": [
+      {
+        "name": "PMATH 400- level",
+        "courses": ["PMATH4"],
+        "count": 3
+      },
+      {
+        "name": "Additional 400- level courses from specified departments",
+        "courses": ["ACTSC4", "AMATH4", "CO4", "CS4", "MATBUS4", "MATH4", "PMATH4", "STAT4"],
+        "count": 2
+      }
+    ],
+    "minimumAverages": {
+      "overall": 60,
+      "mathMajor": 65
     }
   }
 }
