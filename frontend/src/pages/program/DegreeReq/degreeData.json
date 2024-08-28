@@ -67,6 +67,9 @@
       ["STAT230", "STAT240"],
       ["STAT231", "STAT241"]
     ],
+    "minimumAverages": {
+      "cav": 60
+    },
     "communicationRequirement": {
         "list1": ["COMMST100", "COMMST223", "EMLS101R", "EMLS102R", "EMLS129R", "ENGL109", "ENGL129R"],
         "list2": ["COMMST225", "COMMST227", "COMMST228", "EMLS103R", "EMLS104R", "EMLS110R", "ENGL101B",
@@ -132,6 +135,9 @@
       ["MATH237", "MATH247"],
       ["AMATH231", "AMATH242", "AMATH250", "AMATH251", "AMATH350", "CS371", "MATH239", "MATH249"]
     ],
+    "minimumAverages": {
+      "mathMajor": 70
+    },
     "additionalRequirements": [
       {
         "name": "STAT 400-level",
@@ -223,6 +229,9 @@
   "BMath, Actuarial science": {
     "extends": "BMath",
     "requiredCredits": 20,
+    "minimumAverages": {
+      "mathMajor": 70
+    },
     "coreCourses": [
       "ACTSC231",
       "ACTSC232",
@@ -281,6 +290,9 @@
       "STAT333",
       "STAT443"
     ],
+    "minimumAverages": {
+      "mathMajor": 70
+    },
     "additionalRequirements": [
       {
         "name": "AFM requirement 1",

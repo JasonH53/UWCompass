@@ -30,6 +30,7 @@ const Home = () => {
   const [search, setSearch] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [error, setError] = useState('');
+  const [selectedPrograms, setSelectedPrograms] = useState([]);
   const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
@@ -47,38 +48,31 @@ const Home = () => {
     }
   };
 
+  const handleSuggestionClick = (program) => {
+    if (!selectedPrograms.includes(program)) {
+      setSelectedPrograms([...selectedPrograms, program]);
+    }
+    setSearch('');
+    setSuggestions([]);
+    setError('');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (suggestions.length > 0) {
-      const selectedProgram = suggestions[0];
-      setSearch(selectedProgram);
-
-      const highlightElement = document.querySelector('.suggestions-list li');
-      if (highlightElement) {
-        highlightElement.classList.add('selected-highlight');
-        setTimeout(() => {
-          highlightElement.classList.remove('selected-highlight');
-          navigateToProgram(selectedProgram);
-        }, 200);
-      }
+    if (selectedPrograms.length > 0) {
+      navigateToProgram(selectedPrograms.join(','));
     } else {
-      navigateToProgram(search);
+      setError('Please select at least one program.');
     }
   };
 
-  const navigateToProgram = (program) => {
-    if (programs.includes(program)) {
-      navigate(`/program/${encodeURIComponent(program)}`);
+  const navigateToProgram = (programs) => {
+    const validPrograms = programs.split(',').filter(program => programs.includes(program.trim()));
+    if (validPrograms.length > 0) {
+      navigate(`/program/${encodeURIComponent(validPrograms.join(','))}`);
     } else {
       setError('Invalid course. Please select a valid program.');
     }
-  };
-
-  const handleSuggestionClick = (program) => {
-    setSearch(program);
-    setSuggestions([]);
-    setError('');
-    navigateToProgram(program);
   };
 
   return (
@@ -104,6 +98,16 @@ const Home = () => {
               </li>
             ))}
           </ul>
+        )}
+        {selectedPrograms.length > 0 && (
+          <div className="selected-programs">
+            <h3>Selected Program(s): (Compatible with multiple majors)</h3>
+            <ul>
+              {selectedPrograms.map((program, index) => (
+                <li key={index}>{program}</li>
+              ))}
+            </ul>
+          </div>
         )}
       </form>
       <footer className="footer">

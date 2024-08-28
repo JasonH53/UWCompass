@@ -5,22 +5,9 @@ import PassedCourses from './PassedCourses/PassedCourses';
 import DegreeReq from './DegreeReq/DegreeReq';
 
 const Program = () => {
-  const { programName } = useParams();
+  const { programNames } = useParams();
   const [currentView, setCurrentView] = useState('parser');
   const [passedCourses, setPassedCourses] = useState([]);
-
-  const renderComponent = () => {
-    switch (currentView) {
-      case 'parser':
-        return <Parser programName={programName} onParseComplete={handleParseComplete} />;
-      case 'passedCourses':
-        return <PassedCourses programName={programName} passedCourses={passedCourses} onConfirm={handleConfirmCourses} onReturn={handleReturnToParser} />;
-      case 'degreeRequirements':
-        return <DegreeReq programName={programName} passedCourses={passedCourses} />;
-      default:
-        return <Parser programName={programName} onParseComplete={handleParseComplete} />;
-    }
-  };
 
   const handleParseComplete = (courses) => {
     setPassedCourses(courses);
@@ -35,9 +22,36 @@ const Program = () => {
     setCurrentView('parser');
   };
 
+  const renderComponent = () => {
+    if (!programNames) {
+      return <div>Error: Program names are not defined.</div>;
+    }
+
+    // Decode and split the program names correctly
+    const programsArray = decodeURIComponent(programNames).split(',').map(program => program.trim());
+    
+    // Reassemble full program names every two parts
+    const fullPrograms = [];
+    for (let i = 0; i < programsArray.length; i += 2) {
+      if (programsArray[i + 1]) {
+        fullPrograms.push(`${programsArray[i]}, ${programsArray[i + 1]}`);
+      }
+    }
+
+    switch (currentView) {
+      case 'parser':
+        return <Parser programNames={fullPrograms} onParseComplete={handleParseComplete} />;
+      case 'passedCourses':
+        return <PassedCourses programNames={fullPrograms} passedCourses={passedCourses} onConfirm={handleConfirmCourses} onReturn={handleReturnToParser} />;
+      case 'degreeRequirements':
+        return <DegreeReq programNames={fullPrograms} passedCourses={passedCourses} />;
+      default:
+        return <Parser programNames={fullPrograms} onParseComplete={handleParseComplete} />;
+    }
+  };
+
   return (
     <div className="program">
-
       {renderComponent()}
     </div>
   );

@@ -12,7 +12,7 @@ function App() {
       <ParticleBackground />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/program/:programName" element={<Program />} />
+          <Route path="/program/:programNames" element={<Program />} />
         </Routes>
       </div>
     </Router>
