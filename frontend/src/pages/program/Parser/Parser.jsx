@@ -9,6 +9,7 @@ const Parser = ({ onParseComplete }) => {
     const file = event.target.files[0];
     pdfToText(file)
       .then(text => {
+        console.log(text);
         parseTranscript(text);
       })
       .catch(error => setErrorPopup("Failed to extract text from PDF, ensure that it is not password protected"));
@@ -16,31 +17,19 @@ const Parser = ({ onParseComplete }) => {
 
   const parseTranscript = (text) => {
     const cleanedText = text.replace(/\s+/g, ' ').trim();
-    const courseRegex = /([A-Z]+\s+\d+[A-Z]?)\s+(.+?)\s+([\d.]+)\s+([\d.]+)\s+([A-Z+-]+|\d+(\.\d+)?|CR)|([A-Z]+\s+\d+[A-Z]?)\s+Transfer\s+Credit\s+Earned\s+([\d.]+)/g;
+    const courseRegex = /([A-Z]+\s+\d+[A-Z]?)\s+(.+?)\s+([\d.]+)\s+([\d.]+)\s+([A-Z+-]+|\d+(\.\d+)?|CR)/g;
     const courses = [];
     let match;
 
     while ((match = courseRegex.exec(cleanedText)) !== null) {
-      if (match[1]) {
-        const [, courseCode, description, attempted, earned, grade] = match;
-        
-        if (attempted === earned && parseFloat(attempted) !== 0) {
-          const course = {
-            code: courseCode,
-            description: description.trim(),
-            earned,
-            grade
-          };
-          courses.push(course);
-        }
-      } else if (match[7]) {
-        const courseCode = match[7];
-        const earned = match[8];
+      const [, courseCode, description, attempted, earned, grade] = match;
+      
+      if (attempted === earned && parseFloat(attempted) !== 0) {
         const course = {
           code: courseCode,
-          description: "Transfer Credit",
+          description: description.trim(),
           earned,
-          grade: "TR"
+          grade
         };
         courses.push(course);
       }
