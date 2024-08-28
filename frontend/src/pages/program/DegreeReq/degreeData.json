@@ -219,5 +219,134 @@
           "count": 3
         }
       ]
+  },
+  "BMath, Actuarial science": {
+    "extends": "BMath",
+    "requiredCredits": 20,
+    "coreCourses": [
+      "ACTSC231",
+      "ACTSC232",
+      "ACTSC331",
+      "ACTSC363",
+      "ACTSC372",
+      "ACTSC431",
+      "ACTSC446",
+      "AFM101",
+      "ECON101",
+      "ECON102",
+      "MTHEL131",
+      "STAT330",
+      "STAT331",
+      "STAT333",
+      ["AMATH250", "AMATH251", "AMATH350"],
+      ["ENGL378", "MTHEL300"],
+      ["MATH237", "MATH247"],
+      ["STAT340", "STAT341"]
+    ],
+    "additionalRequirements": [
+      {
+        "name": "ACTSC 400- level",
+        "courses": ["ACTSC4"],
+        "count": 2
+      },
+      {
+        "name": "Additional courses from specified departments",
+        "courses": ["ACTSC", "AMATH", "CO", "CS", "MATBUS", "MATH", "PMATH", "STAT"]
+      },
+      {
+        "name": "Additional ACTSC 300- or 400- level",
+        "courses": ["ACTSC3", "ACTSC4"],
+        "count": 2
+      },
+      {
+        "name": "Specific ACTSC or STAT courses",
+        "courses": ["AFM424", "STAT431", "STAT433", "STAT441", "STAT443"],
+        "count": 1
+      }
+    ]
+  },
+  "BMath, Mathematical Finance": {
+    "extends": "BMath",
+    "requiredCredits": 20,
+    "coreCourses": [
+      "ACTSC231",
+      "ACTSC372",
+      "ACTSC445",
+      "ACTSC446",
+      "PMATH351",
+      "PMATH450",
+      "PMATH451",
+      "STAT330",
+      "STAT331",
+      "STAT333",
+      "STAT443"
+    ],
+    "additionalRequirements": [
+      {
+        "name": "AFM requirement 1",
+        "courses": ["AFM101", "BUS127W"],
+        "count": 1
+      },
+      {
+        "name": "AFM requirement 2",
+        "courses": ["AFM102", "BUS247W"],
+        "count": 1
+      },
+      {
+        "name": "AFM requirement 3",
+        "courses": ["AFM131", "ARBUS101", "BUS111W"],
+        "count": 1
+      },
+      {
+        "name": "Complete 1 of the following",
+        "courses": ["AMATH242", "CS335", "CS371"],
+        "count": 1
+      },
+      {
+        "name": "Complete 1 of the following",
+        "courses": ["AMATH250", "AMATH251", "AMATH350"],
+        "count": 1
+      },
+      {
+        "name": "Complete 1 of the following",
+        "courses": ["AMATH351", "CO250", "CO255", "PMATH352"],
+        "count": 1
+      },
+      {
+        "name": "Complete 1 of the following",
+        "courses": ["AMATH353", "CO372", "CS476", "PMATH453"],
+        "count": 1
+      },
+      {
+        "name": "ECON requirement 1",
+        "courses": ["ECON101", "ECON120W"],
+        "count": 1
+      },
+      {
+        "name": "ECON requirement 2",
+        "courses": ["ECON102", "ECON140W"],
+        "count": 1
+      },
+      {
+        "name": "ECON requirement 3",
+        "courses": ["ECON201", "ECON260W"],
+        "count": 1
+      },
+      {
+        "name": "Complete 1 of the following",
+        "options": {
+          {
+            "name": "MATH247",
+            "courses": ["MATH247"],
+            "count": 1
+          },
+          {
+            "name": "MATH237 and PMATH333",
+            "courses": ["MATH237", "PMATH333"],
+            "count": 2
+          }
+        }
+      }
+    ]
   }
 }
