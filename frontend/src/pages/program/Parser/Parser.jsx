@@ -3,40 +3,26 @@ import pdfToText from 'react-pdftotext';
 import './Parser.css';
 
 const Parser = ({ onParseComplete }) => {
-  // eslint-disable-next-line
-  const [transcript, setTranscript] = useState('');
+  const [errorPopup, setErrorPopup] = useState('');
 
   const extractText = (event) => {
     const file = event.target.files[0];
     pdfToText(file)
       .then(text => {
-        setTranscript(text);
         parseTranscript(text);
       })
-      .catch(error => console.error("Failed to extract text from pdf", error));
+      .catch(error => setErrorPopup("Failed to extract text from PDF, ensure that it is not password protected"));
   };
 
   const parseTranscript = (text) => {
-    console.log("Raw transcript text:", text);
-    
-    // Remove extra spaces and split by course codes
     const cleanedText = text.replace(/\s+/g, ' ').trim();
-    const courseRegex = /([A-Z]+\s+\d+[A-Z]?)/g;
-    const courseSections = cleanedText.split(courseRegex);
-    console.log("Course sections:", courseSections);
-  
+    const courseRegex = /([A-Z]+\s+\d+[A-Z]?)\s+(.+?)\s+([\d.]+)\s+([\d.]+)\s+([A-Z+-]+|\d+(\.\d+)?|CR)|([A-Z]+\s+\d+[A-Z]?)\s+Transfer\s+Credit\s+Earned\s+([\d.]+)/g;
     const courses = [];
-  
-    for (let i = 1; i < courseSections.length; i += 2) {
-      const courseCode = courseSections[i].trim();
-      const courseDetails = courseSections[i + 1].trim();
-  
-      console.log("Processing course:", courseCode, courseDetails);
-  
-      const detailsMatch = courseDetails.match(/(.+?)\s+([\d.]+)\s+([\d.]+)\s+([A-Z+-]+|\d+(\.\d+)?|CR)$/);
-  
-      if (detailsMatch) {
-        const [, description, attempted, earned, grade] = detailsMatch;
+    let match;
+
+    while ((match = courseRegex.exec(cleanedText)) !== null) {
+      if (match[1]) {
+        const [, courseCode, description, attempted, earned, grade] = match;
         
         if (attempted === earned && parseFloat(attempted) !== 0) {
           const course = {
@@ -46,17 +32,30 @@ const Parser = ({ onParseComplete }) => {
             grade
           };
           courses.push(course);
-          console.log("Added course:", course);
         }
-      } else {
-        console.log("Could not parse details for course:", courseCode);
+      } else if (match[7]) {
+        const courseCode = match[7];
+        const earned = match[8];
+        const course = {
+          code: courseCode,
+          description: "Transfer Credit",
+          earned,
+          grade: "TR"
+        };
+        courses.push(course);
       }
     }
-  
-    console.log(courses);
-    onParseComplete(courses);
+
+    if (courses.length === 0) {
+      setErrorPopup("Could not parse any course details.");
+    } else {
+      onParseComplete(courses);
+    }
   };
-    
+
+  const closeErrorPopup = () => {
+    setErrorPopup('');
+  };
 
   return (
     <div className="transcript-parser">
@@ -64,14 +63,16 @@ const Parser = ({ onParseComplete }) => {
       <p>Please upload your transcript.</p>
       <label htmlFor="transcript-upload">
         Upload PDF
-        <input 
-          id="transcript-upload"
-          type="file" 
-          accept="application/pdf" 
-          onChange={extractText} 
-        />
+        <input id="transcript-upload" type="file" accept="application/pdf" onChange={extractText} />
       </label>
-      <p>Your transcript data is processed locally, none of your data is saved on UWCompass</p>
+      <p>Your transcript data is processed locally, none of your data is saved on UWCompass. Make sure your transcript PDF is not password protected.</p>
+
+      {errorPopup && (
+        <div className="error-popup">
+          <span>{errorPopup}</span>
+          <button onClick={closeErrorPopup}>&times;</button>
+        </div>
+      )}
     </div>
   );
 };

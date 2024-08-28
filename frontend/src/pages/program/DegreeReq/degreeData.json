@@ -334,7 +334,7 @@
       },
       {
         "name": "Complete 1 of the following",
-        "options": {
+        "options": [
           {
             "name": "MATH247",
             "courses": ["MATH247"],
@@ -345,7 +345,7 @@
             "courses": ["MATH237", "PMATH333"],
             "count": 2
           }
-        }
+        ]
       }
     ]
   }
