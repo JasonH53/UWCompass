@@ -33,7 +33,7 @@ const PassedCourses = ({ programName, passedCourses, onConfirm, onReturn }) => {
 
   return (
     <div className="passed-courses">
-      <h2>Valid Course Attempts for {programName}</h2>
+      <h2>Valid Course Attempts</h2>
       {passedCourses.length > 0 ? (
         <ul>
           {passedCourses.map((course, index) => (
