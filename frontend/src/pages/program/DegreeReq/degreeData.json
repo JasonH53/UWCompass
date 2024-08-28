@@ -311,6 +311,10 @@
           }
         }
       }
-    ]
+    ],
+    "minimumAverages": {
+      "overall": 60,
+      "mathMajor": 70
+    }
   }
 }
